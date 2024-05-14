@@ -10,8 +10,8 @@ function WeatherApp() {
   };
 
   const handleSearch = () => {
-    const apiKey = "e10e48cd5c1df35f6da8d75df73a8bb5"; // Corrected variable name
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`; // Corrected URL
+    const apiKey = "44f0a763d89e4b81b6cc95a82b2c2a5a"; // apikey
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`; // url
     if (cityName) {
       fetch(url)
         .then((data) => data.json())
@@ -27,6 +27,7 @@ function WeatherApp() {
       <div className='w-3/5 h-4/5 bg-[#ffffff66] rounded-lg flex'>
         <div className='w-1/2 bg-left h-full bg-cover bg-no-repeat rounded-l-lg flex flex-col justify-between'>
           <div className='flex justify-end m-4'>
+          
             <p className='font-bold text-2xl'>
               {weather.name} | {weather.sys ? weather.sys.country : ''}
             </p>
@@ -79,6 +80,7 @@ function WeatherApp() {
           <div className='flex justify-around font-bold text-white border-b border-gray-300 m-6 p-2'>
             <p>Wind Speed</p>
             {weather.wind ? <p>{weather.wind.speed} meter/sec</p> : ''}
+            <h1>Programming-With-Gagan</h1>
           </div>
         </div>
       </div>
